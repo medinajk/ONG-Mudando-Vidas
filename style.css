@@ -1,0 +1,98 @@
+body {
+    background-color: #8b8e7944;
+    padding-top: 60px;
+}
+
+
+nav {
+   background-color: #153f52;
+   position: fixed;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   height: 60px;
+   padding: 0 30px;
+   border-radius: 50px;
+
+   top: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 1000;
+}
+
+nav a {
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0 1rem;
+}
+
+#home {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+#home h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    color: #153f52;
+}
+
+#about {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+#about h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: #153f52;
+}
+
+#donations {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+#donations h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: #153f52;
+} 
+
+.btn {
+    text-decoration: none;
+    background-color: #153f52;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #153f52;
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: static;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: auto;
+}
