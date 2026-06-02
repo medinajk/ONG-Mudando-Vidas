@@ -13,3 +13,14 @@ navLinks.addEventListener("click", (event) => {
         menuButton.setAttribute("aria-expanded", "false");
     }
 });
+
+// copiar chave pix
+function copiarPix() {
+    const chave = document
+        .getElementById("chavePix")
+        .innerText;
+
+    navigator.clipboard.writeText(chave);
+
+    alert("Chave PIX copiada!");
+}

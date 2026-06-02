@@ -178,6 +178,8 @@ section {
     background: var(--coral);
     color: var(--paper);
     box-shadow: 0 12px 26px rgba(213, 107, 86, 0.24);
+    display: flex;
+    justify-content: center;
 }
 
 .btn-secondary {
@@ -334,6 +336,41 @@ section {
 
 .donation-options article {
     padding: 26px;
+}
+
+.pix {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.pix-box {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.pix h2 {
+    color: #153f52;
+    font-size: 40px;
+}
+
+.pix-box span {
+    display: block;
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #153f52;
+}
+
+.pix-box button {
+    background: #153f52;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .section-text {
