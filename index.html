@@ -5,52 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
     <title>ONG Mudando Vidas</title>
 </head>
 <body> 
-    <nav>
-            <a href="#home">Home</a>
-            <a href="#about">Sobre</a>
-            <a href="#donations">Doações</a>
-            <a href="#contact">Contato</a>
-    </nav>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <a class="brand" href="home">
+                <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Logo da ONG Mudando Vidas">
+                <span>Mudando Vidas</span>
+            </a>
 
+            <button class="menu-bottom" type="button" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-    <section id="home">
-        <h2>Projeto Mudando Vidas</h2>
-        <img src="https://i0.wp.com/gestaodesegurancaprivada.com.br/wp-content/uploads/Organizacao-Nao-Governamental.jpg?fit=1280%2C720&ssl=1" alt="Imagem de Solidariedade" class="home-image>
-        <p>Nosso objetivo é transformar vidas através de ações solidárias e projetos sociais.</p>
-        <p>Junte-se a nós e faça parte dessa mudança!</p>
-        <p>Conheça nossos projetos e como você pode contribuir para um mundo melhor.</p>
-    </section>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">Nossa História</a>
+                <a href="#donations">Doações</a>
+                <a href="#partners">Parceiros</a>
+                <a href="#transparency">Transparência</a>
+                <a href="#contact">Contato</a>
+            </div>
+        </nav>
+    </header>
 
-    <section id="about">
-        <h2>Nossa Iniciativa</h2>
-        <p>A ONG Mudando Vidas foi fundada em - com a missão de ajudar comunidades carentes a alcançar uma vida melhor.</p>
-        <p>Realizamos diversos projetos, desde educação até saúde, para impactar positivamente a vida das pessoas.</p>
-        <p>Junte-se a nós nessa jornada de transformação e faça parte dessa mudança!</p>
-        <p>Para mais informações, entre em contato conosco através do email: contato@ongmudandovidas.org</p>
-        <p>Ou pelo telefone: (11) 1234-5678</p>
-        <p>Estamos localizados na Rua das Flores, 123, São Paulo - SP.</p>
-        <p>Nosso horário de atendimento é de segunda a sexta, das 9h às 18h.</p>
-        <p>Juntos, podemos fazer a diferença!</p>
-        <p>Obrigado por visitar nosso site e conhecer um pouco mais sobre a ONG Mudando Vidas.</p>
-        <p>Esperamos contar com seu apoio e participação em nossos projetos.</p>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Serviço Socioassistencial de Acolhimento</p>
+                <h1>Projeto Mudando Vidas</h1>
+                <p>
+                   Transformamos apoio em oportunidades reais para famílias, crianças e comunidades
+                   que precisam de cuidado e acolhimento.
+                </p>
+                <div class="hero-actions">
+                    <a href="#donations" class="btn btn-primary">Doe agora</a>
+                    <a href="#about" class="btn btn-secondary">Conheça a ONG</a>
+                </div>
+            </div>
+            <div class="hero-card" aria-label="Resumo de impacto">
+                <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Simbolo do Projeto Mudando Vidas">
+                <div>
+                    <strong>Juntos, fazemos a diferença</strong>
+                    <span>Desde 2014</span>
+                </div>
+            </div>
+        </section>
 
-    <section id="donations">
-        <h2>Faça uma Doação</h2>
-        <p>Contribua para nossas causas e ajude a transformar vidas. Sua doação pode fazer a diferença!</p>
-        <a href="#donations" class="btn">Doe agora</a>
+        <section class="impact-strip" aria-label="Indicadores da ONG">
+            <div>
+                <strong>120+</strong>
+                <span>famílias apoiadas</span>
+            </div>
+            <div>
+                <strong>18</strong>
+                <span>ações comunitárias</span>
+            </div>
+            <div>
+                <strong>35</strong>
+                <span>voluntários ativos</span>
+            </div>
+        </section>
 
-    </section>
+        <section id="about" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Nossa história</p>
+                <h2>Uma rede de cuidado para quem mais precisa</h2>
+            </div>
+            <div class="content-grid">
+                <article>
+                    <p>
+                        O Projeto Mudando Vidas, desenvolvido pela OSC de igual denominação, é um Serviço Socioassistencial de Acolhimento, na modalidade Abrigo Institucional, a pessoas do gênero feminino, com perfil/histórico de vivência em situação de rua, e eventualmente crianças e adolescentes de sua responsabilidade e que as acompanham. 
+                        A Organização, nascida em setembro de 2014, surgiu voltada a desenvolver ações e atuação junto a pessoas em processo de pré ou pós tratamento em Comunidades terapêuticas (voluntariamente) por uso/abuso de álcool e drogas, e apoio e suporte no período em que permaneciam em tratamento.
+                    </p>
+                    <p>Além disto o Projeto militou e ainda milita com ativismo na área de prevenção e combate ao uso e abuso de álcool e drogas, e ao atendimento à população em situação de rua em geral.</p>
+                    <p>
+                        A Casa Abrigo, unidade de atendimento do projeto atualmente tem hoje uma equipe composta por: Coordenação, três técnicos em equipe intersetorial (assistente social, psicólogo e pedagoga), 04 educadores-cuidadores-sociais, 04 auxiliares de educadores-cuidadores-sociais, dois dos quais exercendo a função de cozinheiro. 
+                    </p>
+                    <p>
+                        Sediado no Jardim Paiva, zona Oeste do Distrito Sede de Ribeirão Preto, a partir de 2021 firmou por ter sido classificado em Edital de Chamamento Público, parceria na gestão compartilhada, em regime de mutua e recíproca cooperação em interesse público, com a Secretaria Municipal de Assistência Social, da Prefeitura Municipal de Ribeirão Preto no Serviço Socioassistencial nacionalmente tipificado que atualmente desenvolve, especificamente com pessoas do gênero feminino, com histórico ou perfil de situação de rua. 
+                    </p>
+                    <p>
+                        A parceria firmada em 2021, foi prorrogada em 2022 e 2023, e ampliada de 12 vagas iniciais para 16 vagas atuais, após ampliação do espaço de acolhimento do Projeto.
+                    </p>
+                    <p>
+                        O projeto tem obtido índices e indicadores positivos, acima da média, no encaminhamento de acolhidas ao retorno à vida comunitária de forma positiva, proativa e pró social, depois de um período de atendimento psicossocial na Unidade Casa Abrigo mantida, não voltando as mesmas a vivência de rua, nem ao consumo ou uso e abuso de substância psicoativas, retomando relações familiares, e/ou afetivas, e profissionais.
+                    </p>
+                </article>
+
+                <article>
+                    <img src="https://static.wixstatic.com/media/c9fd3d_779099acdc9e48afad57a3f6c43f8bd9~mv2.jpg/v1/fill/w_512,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202024-01-05%20at%208_19_edited.jpg" alt="Ricardo Tostes, presidente do Projeto Mudando Vidas">
+                    <figcaption><strong>Ricardo Tostes - Presidente do Projeto Mudando Vidas</strong></figcaption>
+                    <p>
+                        O projeto pretende, tão logo possível ampliar suas vagas um pouco mais e ampliar sua atuação em outros serviços socioassistenciais, se obter classificação em participação em editais de chamamento.
+                    </p>
+                    <p>
+                        Importante concluir, lembrando que a parceria com o Poder Público é voluntária e gratuita, não sendo a OSC remunerada em nenhum centavo e de nenhuma forma pela cessão de sua experiência/expertise, igual e semelhante. 
+                        Repasse de recursos realizados são exclusivamente para fazer frente a despesas de custeio do projeto, deles se prestando contas regularmente e restituindo eventuais saldos remanescentes ao final da mesma.
+                    </p>
+                </article>
+                
+            </div>
+        </section>
+
+        <section id="donations" class="section section-accent">
+            <div class="section-heading">
+                <p class="eyebrow">Doações</p>
+                <h2>Formas de Contribuir</h2>
+            </div>
+            <div class="donation-options">
+                <article>
+                    <h3>Alimentos</h3>
+                    <p>Cestas básicas e alimentos não perecíveis.</p>
+                </article>
+                <article>
+                    <h3>Higiene</h3>
+                    <p>Produtos de higiene pessoal e limpeza para famílias atendidas.</p>
+                </article>
+                <article>
+                    <h3>Recursos</h3>
+                    <p>Apoio financeiro para manter projetos, oficinas e distribuições.</p>
+                </article>
+            </div>
+            <a href="#contact" class="btn btn-primary">Quero contribuir</a>
+        </section>
+
+        <section id="partners" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Parceiros</p>
+                <h2>Empresas e pessoas que ampliam nosso alcance</h2>
+            </div>
+            <p class="section-text">
+                Contamos com parceiros que compartilham nossa missão e ajudam a levar mais estrutura
+                para cada ação. Sua empresa também pode colaborar com doações, serviços, voluntariado
+                ou apoio institucional.
+            </p>
+            <img src="https://www.matrixprint.com.br/impressora-de-cartazes/assets/images/pp.jpg" alt="Parceiros">
+            <img src="https://media.licdn.com/dms/image/v2/C4E0BAQEAdFSDoD3R9g/company-logo_200_200/company-logo_200_200/0/1631351317684?e=2147483647&v=beta&t=n5NIq2H09NIHrDW4nnISPKHyV5nJ4BBtkBIDcX12ID4" alt="Parceiros">
+            <img src="https://static.wixstatic.com/media/c9fd3d_112c74e7072d4a6db58940550c5329dc~mv2.png/v1/fill/w_420,h_85,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_112c74e7072d4a6db58940550c5329dc~mv2.png" alt="Parceiros">
+            <img src="https://static.wixstatic.com/media/c9fd3d_fbab08730aa243d69ffa1a7e958eacd5~mv2.png/v1/fill/w_420,h_77,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_fbab08730aa243d69ffa1a7e958eacd5~mv2.png" alt="Parceiros">
+            <img src="https://static.wixstatic.com/media/c9fd3d_76c85e0b300f44a784dd3e937e8180dc~mv2.png/v1/fill/w_386,h_264,al_c,lg_1,q_85,enc_avif,quality_auto/cropped-Logo8.png" alt="Parceiros">
+            <img src="https://static.wixstatic.com/media/c9fd3d_c220220ef2d04841be15502844f5c139~mv2.png/v1/fill/w_584,h_264,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_c220220ef2d04841be15502844f5c139~mv2.png" alt="Parceiros">
+            <img src="https://static.wixstatic.com/media/c9fd3d_031cd661f3094c16a927d9d1b8454381~mv2.png/v1/fill/w_714,h_228,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/clinica.png" alt="Parceiros">
+            <img src="https://static.wixstatic.com/media/c9fd3d_46da9554b4dc416380c644d4c8cee3d9~mv2.png/v1/fill/w_658,h_125,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_46da9554b4dc416380c644d4c8cee3d9~mv2.png" alt="Parceiros">
+            <img src="https://static.wixstatic.com/media/c9fd3d_9b4a5e917abc4a5cabdcc6ddf6118d8b~mv2.png/v1/fill/w_104,h_210,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_9b4a5e917abc4a5cabdcc6ddf6118d8b~mv2.png" alt="Parceiros">
+            <img src="https://static.wixstatic.com/media/c9fd3d_39da0e47c39e4628bf0d2e9073a26580~mv2.png/v1/fill/w_578,h_323,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_39da0e47c39e4628bf0d2e9073a26580~mv2.png" alt="">
+
+        </section>
+
+        <section id="transparency" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Transparência</p>
+                <h2>Responsabilidade em cada doação recebida</h2>
+            </div>
+            <div class="content-grid">
+                <p>
+                    Publicamos relatórios financeiros e de atividades para que apoiadores acompanhem
+                    como os recursos são utilizados e quais resultados foram alcançados.
+                </p>
+                <p>
+                    Nosso compromisso é aplicar cada contribuição com clareza, eficiência e foco no
+                    bem-estar das comunidades atendidas.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div>
+                <p class="eyebrow">Contato</p>
+                <h2>Vamos construir essa mudança juntos?</h2>
+            </div>
+            <a href="mailto:ong.mudandovidas@gmail.com" class="btn btn-secondary">Fale conosco</a>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 ONG Mudando Vidas</p>
+        <p>&copy; 2026 Por Projeto Mudando Vidas. Todos os direitos reservados.</p>
     </footer>
 
 
-
+    <script src="script.js"></script>
 </body>
 </html>
