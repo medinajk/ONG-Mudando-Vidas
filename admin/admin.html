@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Área da ONG - Gestão de Relatórios</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="admin-container">
+        <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Logo" class="header-img">
+        
+        <div id="loginSection">
+            <h2>Iniciar Sessão</h2>
+            <p style="color: #637381; font-size: 0.9rem;">Acesso restrito à equipe</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" id="btnLogin">Entrar</button>
+                <div id="loginStatus"></div>
+            </form>
+        </div>
+
+        <div id="uploadSection" class="hidden">
+            <h2>Publicar Novo Relatório</h2>
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label>Título do Relatório</label>
+                    <input type="text" id="titulo" required>
+                </div>
+                <div class="form-group">
+                    <label>Arquivo PDF</label>
+                    <input type="file" id="arquivoPdf" accept="application/pdf" required>
+                </div>
+                <button type="submit" id="btnSubmit">Fazer Upload e Publicar</button>
+                <div id="status"></div>
+            </form>
+            <button id="btnLogout" class="btn-outline">Sair da Conta</button>
+        </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
