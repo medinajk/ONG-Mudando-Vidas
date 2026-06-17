@@ -1,234 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <title>Projeto Mudando Vidas Ribeirão Preto</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#837ba8',
+                            dark: '#6B4AAC',
+                            text: '#000000', // Texto preto
+                            accent: '#c46d7e',
+                            blush: '#fae8e8',
+                            bg: '#f8f5ff',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 120px; }
+        .gradient-blob {
+            background: radial-gradient(circle, rgba(107, 74, 172, 0.2) 0%, rgba(253, 246, 240, 0) 70%);
+        }
+    </style>
 </head>
-<body> 
-    <header class="site-header">
-        <nav class="navbar" aria-label="Main Navigation">
-            <a class="brand" href="home">
-                <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Logo da ONG Mudando Vidas">
-                <span>Mudando Vidas</span>
+<body class="bg-brand-bg text-brand-text font-sans"> 
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-purple shadow-lg">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+            <a href="#home" class="flex items-center gap-3">
+                <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Logo da ONG Mudando Vidas" class="w-14 h-14 rounded-full bg-white">
+                <span class="text-white font-extrabold text-2xl">Mudando Vidas</span>
             </a>
 
-            <button class="menu-bottom" type="button" aria-label="Abrir menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button id="menuButton" class="md:hidden w-11 h-11 rounded-full bg-white/20 flex flex-col items-center justify-center">
+                <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+                <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
             </button>
 
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">Nossa História</a>
-                <a href="#donations">Doações</a>
-                <a href="#partners">Parceiros</a>
-                <a href="#transparency">Transparência</a>
-                <a href="#contact">Contato</a>
-                <a href="#initiatives">Iniciativas</a>
+            <div id="navLinks" class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-white font-bold text-lg hover:opacity-80 transition">Home</a>
+                <a href="/history/" class="text-white font-bold text-lg hover:opacity-80 transition">Nossa História</a>
+                <a href="#donations" class="text-white font-bold text-lg hover:opacity-80 transition">Doações</a>
+                <a href="#initiatives" class="text-white font-bold text-lg hover:opacity-80 transition">Iniciativas</a>
+                <a href="#partners" class="text-white font-bold text-lg hover:opacity-80 transition">Parceiros</a>
+                <a href="#transparency" class="text-white font-bold text-lg hover:opacity-80 transition">Transparência</a>
+                <a href="#contact" class="text-white font-bold text-lg hover:opacity-80 transition">Contato</a>
             </div>
         </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mx-6 mb-4 bg-brand-purple/95 rounded-2xl shadow-xl p-6">
+            <a href="#home" class="block text-white font-bold py-3 text-lg">Home</a>
+            <a href="/history/" class="block text-white font-bold py-3 text-lg">Nossa História</a>
+            <a href="#donations" class="block text-white font-bold py-3 text-lg">Doações</a>
+            <a href="#initiatives" class="block text-white font-bold py-3 text-lg">Iniciativas</a>
+            <a href="#partners" class="block text-white font-bold py-3 text-lg">Parceiros</a>
+            <a href="#transparency" class="block text-white font-bold py-3 text-lg">Transparência</a>
+            <a href="#contact" class="block text-white font-bold py-3 text-lg">Contato</a>
+        </div>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <p class="eyebrow">Serviço Socioassistencial de Acolhimento</p>
-                <h1>Projeto Mudando Vidas</h1>
-                <p>
-                   Promovendo acolhimento, autonomia e transformação de vidas.
-                </p>
-                <div class="hero-actions">
-                    <a href="#donations" class="btn btn-primary">Doe agora</a>
-                    <a href="#about" class="btn btn-secondary">Conheça o Projeto</a>
-                </div>
-            </div>
-            <div class="hero-card" aria-label="Resumo de impacto">
-                <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Simbolo do Projeto Mudando Vidas">
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section id="home" class="relative overflow-hidden max-w-7xl mx-auto px-6 py-16 md:py-24">
+            <div class="absolute top-0 left-0 w-96 h-96 gradient-blob -translate-x-1/2 -translate-y-1/2"></div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <div>
-                    <strong>Juntos, fazemos a diferença</strong>
-                    <span>Desde 2014</span>
+                    <span class="inline-block bg-brand-purple/20 text-brand-dark font-bold text-xs md:text-sm tracking-wider uppercase px-6 py-2 rounded-full mb-6">
+                        Serviço Socioassistencial de Acolhimento
+                    </span>
+                    <h1 class="text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] font-extrabold leading-tight mb-6">
+                        <span class="text-black">Projeto</span> <span class="text-brand-dark">Mudando Vidas</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-black mb-10 max-w-2xl">
+                        Promovendo acolhimento, autonomia e transformação de vidas para mulheres em situação de vulnerabilidade em Ribeirão Preto.
+                    </p>
+                    <div class="flex flex-wrap gap-5">
+                        <a href="#donations" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-brand-dark text-white hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-brand-dark/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            Doe agora
+                        </a>
+                        <a href="#about" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-white text-brand-dark border-2 border-brand-purple/30 hover:-translate-y-1 transition-all duration-300">
+                            Conheça o Projeto
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center md:justify-end">
+                    <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-brand-purple/10 flex items-center gap-6 max-w-md">
+                        <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Simbolo do Projeto Mudando Vidas" class="w-36 h-36 rounded-full bg-white shadow-xl border border-brand-purple/10">
+                        <div class="text-left">
+                            <h3 class="text-2xl font-extrabold text-brand-dark mb-2">Juntos, fazemos a diferença</h3>
+                            <span class="inline-block bg-brand-purple/20 text-brand-dark font-bold px-4 py-1 rounded-full">Desde 2014</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section">
-            <div class="section-heading">
-                <p class="eyebrow">Nossa história</p>
-                <h2>Uma rede de cuidado para quem mais precisa</h2>
-            </div>
-            <div class="content-grid">
-                <article>
-                    <p>
+        <!-- About Section -->
+        <section id="about" class="bg-brand-bg py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <div class="w-24 h-2 bg-brand-dark mx-auto rounded-full mb-8"></div>
+                    <p class="text-brand-accent font-extrabold text-xs tracking-widest uppercase mb-3">Nossa história</p>
+                    <h2 class="text-brand-dark font-extrabold text-3xl md:text-4xl">Uma rede de cuidado para quem mais precisa</h2>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-lg border border-brand-purple/10 p-10">
+                    <p class="text-base md:text-lg text-black leading-relaxed mb-6">
                         O Projeto Mudando Vidas, desenvolvido pela OSC de igual denominação, é um Serviço Socioassistencial de Acolhimento, na modalidade Abrigo Institucional, a pessoas do gênero feminino, com perfil/histórico de vivência em situação de rua, e eventualmente crianças e adolescentes de sua responsabilidade e que as acompanham. 
-                        
                     </p>
-                    <a href="/history/history.html" class="btn btn-secondary" style="margin-top: 20px; display: inline-block;">
-                      Conheça nossa história completa ➔
+                    <a href="/history/" class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full font-bold text-base bg-brand-purple/10 text-brand-dark border-2 border-brand-purple/30 hover:bg-brand-purple hover:text-white transition-all duration-300">
+                        Conheça nossa história completa
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
                     </a>
-                    
-                    
-                    
-                    
-                </article>
-                
+                </div>
             </div>
         </section>
 
-        <section id="donations" class="section section-accent">
-            <div class="section-heading">
-                <p class="eyebrow">Doações</p>
-                <h2>Formas de Contribuir</h2>
+        <!-- Donations Section -->
+        <section id="donations" class="max-w-7xl mx-auto px-6 py-20">
+            <div class="text-center mb-16">
+                <div class="w-24 h-2 bg-brand-dark mx-auto rounded-full mb-8"></div>
+                <p class="text-brand-accent font-extrabold text-xs tracking-widest uppercase mb-3">Doações</p>
+                <h2 class="text-brand-dark font-extrabold text-3xl md:text-4xl">Formas de Contribuir</h2>
             </div>
-            <div class="donation-options">
-                <article>
-                    <h3>Alimentos</h3>
-                    <p>Cestas básicas e alimentos não perecíveis.</p>
-                </article>
-                <article>
-                    <h3>Higiene Pessoal</h3>
-                    <p>Faça uma doação de produtos de higiene pessoal.</p>
-                </article>
-                <article>
-                    <h3>Roupas</h3>
-                    <p>Faça uma doação de roupas usadas. Utilizaremos estas roupas para nossas acolhidas e para realizar nosso bazar.</p>
-                </article>
-                <article>
-                    <h3>Roupas de cama e banho</h3>
-                    <p>Faça uma doação de roupas de cama e banho. Esta doação será destinada para nossas acolhidas que no processo de encaminhamento para sua nova moradia ou para sua família levará consigo.</p>
-                </article>
-                <article>
-                    <h3>Produtos de limpeza</h3>
-                    <p>Faça uma doação de produtos de limpeza. Esta doação será utilizada para manter a higiene e o bem-estar das famílias atendidas.</p>
-                </article>
-                <article>
-                    <h3>Seja voluntário</h3>
-                    <p>Nesse processo, suas habilidades profissionais podem contribuir diretamente para a autonomia financeira de nossas acolhidas.
-                       Ao compartilhar seus conhecimentos — seja na área de estudos, atividades físicas, artesanato, culinária ou outras especialidades — você ajudará no desenvolvimento de novas habilidades, possibilitando aprendizado, geração de renda extra e mais independência financeira.</p>
-                </article>
-                <article>
-                    <h3>Móveis Usados</h3>
-                    <p>Aceitamos móveis e utensílios usados, como sofá, geladeira, fogão, cama, televisão, itens de cozinha e outros objetos em bom estado.
-                         Esses itens são destinados às acolhidas que concluíram o acompanhamento técnico, conquistaram autonomia financeira e estão prontas para recomeçar em seu novo lar.</p>
-                </article>
-                <article>
-                    <h3>Doe seu Tempo</h3>
-                    <p>Faça uma doação do seu tempo. Neste processo você poderá fazer parte da ressignificação de nossas acolhidas visitando-as na casa apoio para ouvi-las e ajudar no processo de reinserção social.</p>
-                </article>
-                <article> 
-                    <section class="pix">
-                <h3>Doação via Chave PIX (CNPJ)</h3>
-                <div class="pix-box">
-                    <span class="pix-key">
-                        26.541.507/0001-46
-                    </span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-brand-purple/20 hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-brand-purple/10 rounded-3xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-brand-dark mb-3">Alimentos</h3>
+                    <p class="text-black text-base">Cestas básicas e alimentos não perecíveis.</p>
+                </div>
 
-                    <button onclick="copiarPix()">
+                <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-brand-dark hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-brand-dark rounded-3xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-brand-dark mb-3">Higiene Pessoal</h3>
+                    <p class="text-black text-base">Produtos de higiene pessoal para nossas acolhidas.</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-brand-purple/20 hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-brand-purple/10 rounded-3xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-brand-dark mb-3">Roupas</h3>
+                    <p class="text-black text-base">Roupas usadas em bom estado, para as acolhidas e para o bazar.</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-brand-purple/20 hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-brand-purple/10 rounded-3xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-brand-dark mb-3">Cama e Banho</h3>
+                    <p class="text-black text-base">Doações que acompanham nossas acolhidas em seu novo lar.</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-brand-purple/20 hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-brand-purple/10 rounded-3xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-brand-dark mb-3">Produtos de Limpeza</h3>
+                    <p class="text-black text-base">Materiais de limpeza para manter o ambiente saudável.</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-brand-purple/20 hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-brand-purple/10 rounded-3xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-brand-dark mb-3">Seja Voluntário</h3>
+                    <p class="text-black text-base">Compartilhe seu conhecimento e habilidades!</p>
+                </div>
+            </div>
+            
+            <div class="max-w-2xl mx-auto text-center bg-white rounded-3xl shadow-xl border-2 border-brand-purple/30 p-10">
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-6">Doação via Chave PIX (CNPJ)</h3>
+                <div class="bg-brand-bg p-8 rounded-3xl mb-6">
+                    <span id="chavePix" class="block text-lg md:text-xl font-extrabold text-brand-dark mb-6">26.541.507/0001-46</span>
+                    <button onclick="copiarPix()" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-brand-dark text-white hover:bg-brand-purple transition-all duration-300 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
                         Copiar Chave PIX
                     </button>
                 </div>
-                
-        </section>
-        
-                </article>
-                
-            </div>
-            <a href="https://api.whatsapp.com/send?phone=5516992507957&text=Gostaria%20de%20fazer%20uma%20doa%C3%A7%C3%A3o%20para%20o%20Projeto%20Mudando%20Vidas" class="btn btn-primary">Entre em contato para contribuir</a>
-        </section>
-
-        <section id="initiatives" class="section">
-            <div class="section-heading">
-                <p class="eyebrow">Iniciativas</p>
-                <h2>Projeto Waraos | Mudando Vidas</h2>
             </div>
             
-            <div class="content-grid project-showcase">
-                
-                <!-- LADO ESQUERDO: Card com as informações -->
-                <article>
-                    <h3>Artesanato e Raízes Indígenas</h3>
-                    <p>
+            <div class="text-center mt-10">
+                <a href="https://api.whatsapp.com/send?phone=5516992507957&text=Gostaria%20de%20fazer%20uma%20doa%C3%A7%C3%A3o%20para%20o%20Projeto%20Mudando%20Vidas" class="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full font-extrabold text-lg bg-brand-dark text-white hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-brand-dark/30">
+                    Entre em contato para contribuir
+                </a>
+            </div>
+        </section>
+
+        <!-- Initiatives Section -->
+        <section id="initiatives" class="bg-brand-bg py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                <div class="w-24 h-2 bg-brand-dark mx-auto rounded-full mb-8"></div>
+                <p class="text-brand-accent font-extrabold text-xs tracking-widest uppercase mb-3">Conheça o Projeto Waraos</p>
+                <h2 class="text-brand-dark font-extrabold text-3xl md:text-4xl">Iniciativas do Projeto</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-extrabold text-brand-dark mb-6">Artesanato e Raízes Indígenas</h3>
+                    <p class="text-base md:text-lg text-black mb-8 leading-relaxed">
                         Uma iniciativa dedicada a valorizar o talento e a cultura do artesanato indígena Warao.
                         Através da organização e participação em diversas feiras, o projeto cria um espaço seguro e direto para a exposição e venda de suas artes e artesanatos tradicionais.
                     </p>
-                    <a href="https://www.instagram.com/projetowaraosrp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-secondary" style="margin-top: 20px;">Saiba Mais</a>
-                </article>
-
-                <div class="carousel-container">
-                    <div class="carousel-slides">
-                        <img src="/img/Captura de tela 2026-06-16 174838.png" alt="Artesanato Indígena 1">
-                        <img src="/img/Captura de tela 2026-06-16 175253.png" alt="Artesanato Indígena 2">
-                        <img src="/img/Captura de tela 2026-06-16 175618.png" alt="Feira de Artesanato">
-                    </div>
-                    
-                    <button class="carousel-prev">❮</button>
-                    <button class="carousel-next">❯</button>
-                    
-                    <div class="carousel-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                    <a href="https://www.instagram.com/projetowaraosrp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-white text-brand-dark border-2 border-brand-purple/30 hover:-translate-y-1 transition-all duration-300">
+                        Saiba Mais
+                    </a>
+                </div>
+                    <div class="relative">
+                        <div id="carouselSlides" class="flex transition-transform duration-500 ease-in-out rounded-3xl shadow-xl overflow-hidden">
+                            <img src="/img/img1.png" alt="Artesanato" class="w-full flex-shrink-0 block">
+                            <img src="/img/img2.png" alt="Artesanato" class="w-full flex-shrink-0 block">
+                            <img src="/img/img3.png" alt="Feira de Artesanato" class="w-full flex-shrink-0 block">
+                        </div>
+                        <button id="carouselPrev" class="absolute top-1/2 -translate-y-1/2 left-4 bg-white/90 hover:bg-white text-brand-dark border-none text-2xl w-12 h-12 rounded-full flex items-center justify-center cursor-pointer z-10 transition shadow-lg">❮</button>
+                        <button id="carouselNext" class="absolute top-1/2 -translate-y-1/2 right-4 bg-white/90 hover:bg-white text-brand-dark border-none text-2xl w-12 h-12 rounded-full flex items-center justify-center cursor-pointer z-10 transition shadow-lg">❯</button>
+                        <div class="absolute bottom-6 w-full flex justify-center gap-3 z-10">
+                            <span class="dot inline-block h-3 w-8 bg-brand-dark rounded-full cursor-pointer transition" data-index="0"></span>
+                            <span class="dot inline-block h-3 w-8 bg-brand-purple/40 rounded-full cursor-pointer transition" data-index="1"></span>
+                            <span class="dot inline-block h-3 w-8 bg-brand-purple/40 rounded-full cursor-pointer transition" data-index="2"></span>
+                        </div>
                     </div>
                 </div>
-        </section>            
-        <section id="partners" class="section">
-            <div class="section-heading">
-                <p class="eyebrow">Parceiros</p>
-                <h2>Empresas e pessoas que ampliam nosso alcance</h2>
             </div>
-            <p class="section-text">
+        </section>
+
+        <!-- Partners Section -->
+        <section id="partners" class="max-w-7xl mx-auto px-6 py-20">
+            <div class="text-center mb-12">
+                <div class="w-24 h-2 bg-brand-dark mx-auto rounded-full mb-8"></div>
+                <p class="text-brand-accent font-extrabold text-xs tracking-widest uppercase mb-3">Parceiros</p>
+                <h2 class="text-brand-dark font-extrabold text-3xl md:text-4xl">Empresas e pessoas que ampliam nosso alcance</h2>
+            </div>
+            <p class="text-lg text-black text-center max-w-3xl mx-auto mb-12">
                 Contamos com parceiros que compartilham nossa missão e ajudam a levar mais estrutura
-                para cada ação. Sua empresa também pode colaborar com doações, serviços, voluntariado
-                ou apoio institucional.
+                para cada ação. Sua empresa também pode colaborar!
             </p>
-            <img src="https://www.matrixprint.com.br/impressora-de-cartazes/assets/images/pp.jpg" alt="Parceiros">
-            <img src="https://media.licdn.com/dms/image/v2/C4E0BAQEAdFSDoD3R9g/company-logo_200_200/company-logo_200_200/0/1631351317684?e=2147483647&v=beta&t=n5NIq2H09NIHrDW4nnISPKHyV5nJ4BBtkBIDcX12ID4" alt="Parceiros">
-            <img src="https://static.wixstatic.com/media/c9fd3d_112c74e7072d4a6db58940550c5329dc~mv2.png/v1/fill/w_420,h_85,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_112c74e7072d4a6db58940550c5329dc~mv2.png" alt="Parceiros">
-            <img src="https://static.wixstatic.com/media/c9fd3d_fbab08730aa243d69ffa1a7e958eacd5~mv2.png/v1/fill/w_420,h_77,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_fbab08730aa243d69ffa1a7e958eacd5~mv2.png" alt="Parceiros">
-            <img src="https://static.wixstatic.com/media/c9fd3d_76c85e0b300f44a784dd3e937e8180dc~mv2.png/v1/fill/w_386,h_264,al_c,lg_1,q_85,enc_avif,quality_auto/cropped-Logo8.png" alt="Parceiros">
-            <img src="https://static.wixstatic.com/media/c9fd3d_c220220ef2d04841be15502844f5c139~mv2.png/v1/fill/w_584,h_264,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_c220220ef2d04841be15502844f5c139~mv2.png" alt="Parceiros">
-            <img src="https://static.wixstatic.com/media/c9fd3d_031cd661f3094c16a927d9d1b8454381~mv2.png/v1/fill/w_714,h_228,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/clinica.png" alt="Parceiros">
-            <img src="https://static.wixstatic.com/media/c9fd3d_46da9554b4dc416380c644d4c8cee3d9~mv2.png/v1/fill/w_658,h_125,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_46da9554b4dc416380c644d4c8cee3d9~mv2.png" alt="Parceiros">
-            <img src="https://static.wixstatic.com/media/c9fd3d_9b4a5e917abc4a5cabdcc6ddf6118d8b~mv2.png/v1/fill/w_104,h_210,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_9b4a5e917abc4a5cabdcc6ddf6118d8b~mv2.png" alt="Parceiros">
-            <img src="https://static.wixstatic.com/media/c9fd3d_39da0e47c39e4628bf0d2e9073a26580~mv2.png/v1/fill/w_578,h_323,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_39da0e47c39e4628bf0d2e9073a26580~mv2.png" alt="Parceiros">
-
-        </section>
-
-        <section id="transparency" class="section">
-            <div class="section-heading">
-                <p class="eyebrow">Transparência</p>
-                <h2>Responsabilidade em cada doação recebida</h2>
-            </div>
-            <div class="content-grid">
-                <p>
-                    Publicamos relatórios financeiros e de atividades para que apoiadores acompanhem
-                    como os recursos são utilizados e quais resultados foram alcançados.
-                </p>
-                <p>
-                    Nosso compromisso é aplicar cada contribuição com clareza, eficiência e foco no
-                    bem-estar das comunidades atendidas.
-                </p>
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn_oMpQQdH3qdCGSvGFTX3w-_kPJGKRDUBMQ&s" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://media.licdn.com/dms/image/v2/C4E0BAQEAdFSDoD3R9g/company-logo_200_200/company-logo_200_200/0/1631351317684?e=2147483647&v=beta&t=n5NIq2H09NIHrDW4nnISPKHyV5nJ4BBtkBIDcX12ID4" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://static.wixstatic.com/media/c9fd3d_112c74e7072d4a6db58940550c5329dc~mv2.png/v1/fill/w_420,h_85,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_112c74e7072d4a6db58940550c5329dc~mv2.png" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://static.wixstatic.com/media/c9fd3d_fbab08730aa243d69ffa1a7e958eacd5~mv2.png/v1/fill/w_420,h_77,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_fbab08730aa243d69ffa1a7e958eacd5~mv2.png" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://static.wixstatic.com/media/c9fd3d_76c85e0b300f44a784dd3e937e8180dc~mv2.png/v1/fill/w_386,h_264,al_c,lg_1,q_85,enc_avif,quality_auto/cropped-Logo8.png" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://static.wixstatic.com/media/c9fd3d_c220220ef2d04841be15502844f5c139~mv2.png/v1/fill/w_584,h_264,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_c220220ef2d04841be15502844f5c139~mv2.png" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://static.wixstatic.com/media/c9fd3d_031cd661f3094c16a927d9d1b8454381~mv2.png/v1/fill/w_714,h_228,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/clinica.png" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://static.wixstatic.com/media/c9fd3d_46da9554b4dc416380c644d4c8cee3d9~mv2.png/v1/fill/w_658,h_125,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_46da9554b4dc416380c644d4c8cee3d9~mv2.png" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://static.wixstatic.com/media/c9fd3d_9b4a5e917abc4a5cabdcc6ddf6118d8b~mv2.png/v1/fill/w_104,h_210,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_9b4a5e917abc4a5cabdcc6ddf6118d8b~mv2.png" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://static.wixstatic.com/media/c9fd3d_39da0e47c39e4628bf0d2e9073a26580~mv2.png/v1/fill/w_578,h_323,al_c,lg_1,q_85,enc_avif,quality_auto/c9fd3d_39da0e47c39e4628bf0d2e9073a26580~mv2.png" alt="Parceiro" class="max-h-20 max-w-full object-contain grayscale hover:grayscale-0 transition duration-300">
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <div>
-                <p class="eyebrow">Contato</p>
-                <h2>Vamos construir essa mudança juntos?</h2>
+        <!-- Transparency Section -->
+        <section id="transparency" class="bg-brand-bg py-20">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <div class="w-24 h-2 bg-brand-dark mx-auto rounded-full mb-8"></div>
+                    <p class="text-brand-accent font-extrabold text-xs tracking-widest uppercase mb-3">Transparência</p>
+                    <h2 class="text-brand-dark font-extrabold text-3xl md:text-4xl">Responsabilidade em cada doação</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 bg-white rounded-3xl shadow-lg border border-brand-purple/10 p-10 mb-12">
+                    <p class="text-base md:text-lg text-black leading-relaxed">
+                        Publicamos relatórios financeiros e de atividades para que apoiadores acompanhem
+                        como os recursos são utilizados e quais resultados foram alcançados.
+                    </p>
+                    <p class="text-base md:text-lg text-black leading-relaxed">
+                        Nosso compromisso é aplicar cada contribuição com clareza, eficiência e foco no
+                        bem-estar das comunidades atendidas.
+                    </p>
+                </div>
+                <!-- Lista de Relatórios -->
+                <div class="bg-white rounded-3xl shadow-lg border border-brand-purple/10 p-10">
+                    <h3 class="text-2xl font-extrabold text-brand-dark mb-6">Relatórios e Documentos</h3>
+                    <div id="relatorios-list" class="space-y-4">
+                        <p class="text-black text-base">Carregando relatórios...</p>
+                    </div>
+                </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=5516992507957&text=Olá%20Projeto%20Mudando%20Vidas,%20gostaria%20de%20saber%20mais%20sobre%20como%20posso%20ajudar!" id="whatsapp-link" class="btn btn-secondary">Entre em contato via WhatsApp</a>
         </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="max-w-5xl mx-auto px-6 py-16 mb-10">
+            <div class="bg-brand-dark rounded-3xl p-10 md:p-14 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <p class="text-brand-blush font-extrabold text-xs tracking-widest uppercase mb-4">Contato</p>
+                    <h2 class="text-white font-extrabold text-2xl md:text-3xl mb-4">Vamos construir essa mudança juntos?</h2>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=5516992507957&text=Ol%C3%A1%20Projeto%20Mudando%20Vidas%2C%20gostaria%20de%20saber%20mais%20sobre%20como%20posso%20ajudar!" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-white text-brand-dark hover:bg-brand-blush transition-all duration-300">
+                    Entre em contato via WhatsApp
+                </a>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Por Projeto Mudando Vidas. Todos os direitos reservados.</p>
+    <footer class="bg-brand-dark py-10 px-6 text-center text-white/80">
+        <p class="text-lg">&copy; 2026 Projeto Mudando Vidas. Todos os direitos reservados.</p>
     </footer>
 
-
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

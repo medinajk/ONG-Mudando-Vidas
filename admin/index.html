@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <title>Área da ONG - Gestão de Relatórios</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#837ba8',
+                            dark: '#6B4AAC',
+                            text: '#000000',
+                            accent: '#c46d7e',
+                            blush: '#fae8e8',
+                            bg: '#f8f5ff',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-brand-bg text-brand-text flex justify-center py-16 px-4">
+    <div class="w-full max-w-lg p-10 bg-white rounded-3xl shadow-xl text-center">
+        <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Logo" class="w-20 h-20 mx-auto mb-8 rounded-full">
+        
+        <div id="loginSection">
+            <h2 class="text-brand-dark font-extrabold text-2xl mb-2">Iniciar Sessão</h2>
+            <p class="text-black text-base mb-8">Acesso restrito à equipe</p>
+            <form id="loginForm" class="space-y-6">
+                <div class="text-left">
+                    <label class="block text-base font-bold mb-2 text-black">E-mail</label>
+                    <input type="email" id="email" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-dark focus:border-brand-dark text-base">
+                </div>
+                <div class="text-left">
+                    <label class="block text-base font-bold mb-2 text-black">Senha</label>
+                    <input type="password" id="password" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-dark focus:border-brand-dark text-base">
+                </div>
+                <button type="submit" id="btnLogin" class="w-full bg-brand-dark hover:bg-brand-purple text-white font-extrabold text-lg py-4 rounded-xl transition-all duration-300 shadow-lg">Entrar</button>
+                <div id="loginStatus" class="font-bold"></div>
+            </form>
+        </div>
+
+        <div id="uploadSection" class="hidden">
+            <h2 class="text-brand-dark font-extrabold text-2xl mb-8">Publicar Novo Relatório</h2>
+            <form id="uploadForm" class="space-y-6">
+                <div class="text-left">
+                    <label class="block text-base font-bold mb-2 text-black">Título do Relatório</label>
+                    <input type="text" id="titulo" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-dark focus:border-brand-dark text-base">
+                </div>
+                <div class="text-left">
+                    <label class="block text-base font-bold mb-2 text-black">Arquivo PDF</label>
+                    <input type="file" id="arquivoPdf" accept="application/pdf" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-dark focus:border-brand-dark text-base bg-white">
+                </div>
+                <button type="submit" id="btnSubmit" class="w-full bg-brand-dark hover:bg-brand-purple text-white font-extrabold text-lg py-4 rounded-xl transition-all duration-300 shadow-lg">Fazer Upload e Publicar</button>
+                <div id="status" class="font-bold"></div>
+            </form>
+            <button id="btnLogout" class="mt-6 w-full bg-transparent border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white font-extrabold text-lg py-4 rounded-xl transition-all duration-300">Sair da Conta</button>
+        </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
