@@ -37,38 +37,43 @@
     </style>
 </head>
 <body class="bg-brand-bg text-brand-text font-sans"> 
-    <header class="fixed top-0 left-0 w-full z-50 bg-brand-purple shadow-lg">
-        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-purple">
+        <nav class="max-w-7xl mx-auto flex items-center px-6 py-4">
+            <!-- Logo no canto esquerdo -->
             <a href="#home" class="flex items-center gap-3">
-                <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Logo da ONG Mudando Vidas" class="w-14 h-14 rounded-full bg-white">
-                <span class="text-white font-extrabold text-2xl">Mudando Vidas</span>
+                <img src="img/logo.png" alt="Logo da ONG Mudando Vidas" class="w-14 h-14 rounded-full bg-white">
             </a>
 
-            <button id="menuButton" class="md:hidden w-11 h-11 rounded-full bg-white/20 flex flex-col items-center justify-center">
+            <!-- Botão mobile -->
+            <button id="menuButton" class="md:hidden ml-auto w-11 h-11 rounded-full bg-white/20 flex flex-col items-center justify-center">
                 <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
                 <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
                 <span class="block w-6 h-0.5 bg-white"></span>
             </button>
 
-            <div id="navLinks" class="hidden md:flex items-center gap-8">
+            <!-- Links de navegação centralizados -->
+            <div id="navLinks" class="hidden md:flex items-center gap-8 ml-auto mr-auto">
                 <a href="#home" class="text-white font-bold text-lg hover:opacity-80 transition">Home</a>
-                <a href="/history/" class="text-white font-bold text-lg hover:opacity-80 transition">Nossa História</a>
+                <a href="history/index.html" class="text-white font-bold text-lg hover:opacity-80 transition">Nossa História</a>
+                <a href="#initiatives" class="text-white font-bold text-lg hover:opacity-80 transition">Acolhimento Warao</a>
                 <a href="#donations" class="text-white font-bold text-lg hover:opacity-80 transition">Doações</a>
-                <a href="#initiatives" class="text-white font-bold text-lg hover:opacity-80 transition">Indígenas Warao</a>
                 <a href="#partners" class="text-white font-bold text-lg hover:opacity-80 transition">Parceiros</a>
-                <a href="#transparency" class="text-white font-bold text-lg hover:opacity-80 transition">Transparência</a>
+                <a href="transparencia/index.html" class="text-white font-bold text-lg hover:opacity-80 transition">Transparência</a>
                 <a href="#contact" class="text-white font-bold text-lg hover:opacity-80 transition">Contato</a>
             </div>
+            
+            <!-- Espaço vazio para equilibrar o logo no lado esquerdo -->
+            <div class="hidden md:block w-14"></div>
         </nav>
         
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden mx-6 mb-4 bg-brand-purple/95 rounded-2xl shadow-xl p-6">
             <a href="#home" class="block text-white font-bold py-3 text-lg">Home</a>
-            <a href="/history/" class="block text-white font-bold py-3 text-lg">Nossa História</a>
+            <a href="history/index.html" class="block text-white font-bold py-3 text-lg">Nossa História</a>
+            <a href="#initiatives" class="block text-white font-bold py-3 text-lg">Acolhimento Warao</a>
             <a href="#donations" class="block text-white font-bold py-3 text-lg">Doações</a>
-            <a href="#initiatives" class="block text-white font-bold py-3 text-lg">Iniciativas</a>
             <a href="#partners" class="block text-white font-bold py-3 text-lg">Parceiros</a>
-            <a href="#transparency" class="block text-white font-bold py-3 text-lg">Transparência</a>
+            <a href="transparencia/index.html" class="block text-white font-bold py-3 text-lg">Transparência</a>
             <a href="#contact" class="block text-white font-bold py-3 text-lg">Contato</a>
         </div>
     </header>
@@ -106,7 +111,7 @@
                 </div>
                 <div class="flex justify-center md:justify-end">
                     <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-brand-purple/10 flex items-center gap-6 max-w-md">
-                        <img src="https://static.wixstatic.com/media/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/c9fd3d_ec91764bc3134369b3d29e8f225738de~mv2.png" alt="Simbolo do Projeto Mudando Vidas" class="w-36 h-36 rounded-full bg-white shadow-xl border border-brand-purple/10">
+                        <img src="img/logo2.png" alt="Simbolo do Projeto Mudando Vidas" class="w-36 h-36 rounded-full bg-white shadow-xl border border-brand-purple/10">
                         <div class="text-left">
                             <h3 class="text-2xl font-extrabold text-brand-dark mb-2">Juntos, fazemos a diferença</h3>
                             <span class="inline-block bg-brand-purple/20 text-brand-dark font-bold px-4 py-1 rounded-full">Desde 2014</span>
@@ -128,12 +133,49 @@
                     <p class="text-base md:text-lg text-black leading-relaxed mb-6">
                         O Projeto Mudando Vidas, desenvolvido pela OSC de igual denominação, é um Serviço Socioassistencial de Acolhimento, na modalidade Abrigo Institucional, a pessoas do gênero feminino, com perfil/histórico de vivência em situação de rua, e eventualmente crianças e adolescentes de sua responsabilidade e que as acompanham. 
                     </p>
-                    <a href="/history/" class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full font-bold text-base bg-brand-purple/10 text-brand-dark border-2 border-brand-purple/30 hover:bg-brand-purple hover:text-white transition-all duration-300">
+                    <a href="history/index.html" class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full font-bold text-base bg-brand-purple/10 text-brand-dark border-2 border-brand-purple/30 hover:bg-brand-purple hover:text-white transition-all duration-300">
                         Conheça nossa história completa
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Initiatives Section -->
+        <section id="initiatives" class="bg-brand-bg py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                <div class="w-24 h-2 bg-brand-dark mx-auto rounded-full mb-8"></div>
+                <p class="text-brand-accent font-extrabold text-xs tracking-widest uppercase mb-3">Conheça o Projeto Warao</p>
+                <h2 class="text-brand-dark font-extrabold text-3xl md:text-4xl">Projeto Acolhimento Warao</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-extrabold text-brand-dark mb-6">Artesanato e Raízes Indígenas</h3>
+                    <p class="text-base md:text-lg text-black mb-8 leading-relaxed">
+                        Uma iniciativa dedicada a valorizar o talento e a cultura do artesanato indígena Warao.
+                        Através da organização e participação em diversas feiras, o projeto cria um espaço seguro e direto para a exposição e venda de suas artes e artesanatos tradicionais.
+                    </p>
+                    <a href="https://www.instagram.com/projetowaraosrp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-white text-brand-dark border-2 border-brand-purple/30 hover:-translate-y-1 transition-all duration-300">
+                        Saiba Mais
+                    </a>
+                </div>
+                    <div class="relative rounded-3xl shadow-xl overflow-hidden">
+                        <div id="carouselSlides" class="flex transition-transform duration-500 ease-in-out">
+                            <img src="img/img1.png" alt="Artesanato" class="w-full flex-shrink-0 object-cover">
+                            <img src="img/img2.png" alt="Artesanato" class="w-full flex-shrink-0 object-cover">
+                            <img src="img/img3.png" alt="Feira de Artesanato" class="w-full flex-shrink-0 object-cover">
+                        </div>
+                        <button id="carouselPrev" class="absolute top-1/2 -translate-y-1/2 left-4 bg-white/90 hover:bg-white text-brand-dark border-none text-2xl w-12 h-12 rounded-full flex items-center justify-center cursor-pointer z-10 transition shadow-lg">❮</button>
+                        <button id="carouselNext" class="absolute top-1/2 -translate-y-1/2 right-4 bg-white/90 hover:bg-white text-brand-dark border-none text-2xl w-12 h-12 rounded-full flex items-center justify-center cursor-pointer z-10 transition shadow-lg">❯</button>
+                        <div class="absolute bottom-6 w-full flex justify-center gap-3 z-10">
+                            <span class="carousel-dot inline-block h-3 w-8 bg-brand-dark rounded-full cursor-pointer transition" data-index="0"></span>
+                            <span class="carousel-dot inline-block h-3 w-8 bg-brand-purple/40 rounded-full cursor-pointer transition" data-index="1"></span>
+                            <span class="carousel-dot inline-block h-3 w-8 bg-brand-purple/40 rounded-full cursor-pointer transition" data-index="2"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -211,12 +253,13 @@
                 <h3 class="text-2xl font-extrabold text-brand-dark mb-6">Doação via Chave PIX (CNPJ)</h3>
                 <div class="bg-brand-bg p-8 rounded-3xl mb-6">
                     <span id="chavePix" class="block text-lg md:text-xl font-extrabold text-brand-dark mb-6">26.541.507/0001-46</span>
-                    <button onclick="copiarPix()" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-brand-dark text-white hover:bg-brand-purple transition-all duration-300 shadow-lg">
+                    <button id="copiarPixBtn" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-brand-dark text-white hover:bg-brand-purple transition-all duration-300 shadow-lg mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                         </svg>
                         Copiar Chave PIX
                     </button>
+                    <p id="mensagemCopiar" class="text-brand-dark font-bold transition-all duration-300"></p>
                 </div>
             </div>
             
@@ -224,43 +267,6 @@
                 <a href="https://api.whatsapp.com/send?phone=5516992507957&text=Gostaria%20de%20fazer%20uma%20doa%C3%A7%C3%A3o%20para%20o%20Projeto%20Mudando%20Vidas" class="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full font-extrabold text-lg bg-brand-dark text-white hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-brand-dark/30">
                     Entre em contato para contribuir
                 </a>
-            </div>
-        </section>
-
-        <!-- Initiatives Section -->
-        <section id="initiatives" class="bg-brand-bg py-20">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                <div class="w-24 h-2 bg-brand-dark mx-auto rounded-full mb-8"></div>
-                <p class="text-brand-accent font-extrabold text-xs tracking-widest uppercase mb-3">Conheça o Projeto Waraos</p>
-                <h2 class="text-brand-dark font-extrabold text-3xl md:text-4xl">Projeto Indígenas Warao</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-extrabold text-brand-dark mb-6">Artesanato e Raízes Indígenas</h3>
-                    <p class="text-base md:text-lg text-black mb-8 leading-relaxed">
-                        Uma iniciativa dedicada a valorizar o talento e a cultura do artesanato indígena Warao.
-                        Através da organização e participação em diversas feiras, o projeto cria um espaço seguro e direto para a exposição e venda de suas artes e artesanatos tradicionais.
-                    </p>
-                    <a href="https://www.instagram.com/projetowaraosrp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-white text-brand-dark border-2 border-brand-purple/30 hover:-translate-y-1 transition-all duration-300">
-                        Saiba Mais
-                    </a>
-                </div>
-                    <div class="relative">
-                        <div id="carouselSlides" class="flex transition-transform duration-500 ease-in-out rounded-3xl shadow-xl overflow-hidden">
-                            <img src="/img/img1.png" alt="Artesanato" class="w-full flex-shrink-0 block">
-                            <img src="/img/img2.png" alt="Artesanato" class="w-full flex-shrink-0 block">
-                            <img src="/img/img3.png" alt="Feira de Artesanato" class="w-full flex-shrink-0 block">
-                        </div>
-                        <button id="carouselPrev" class="absolute top-1/2 -translate-y-1/2 left-4 bg-white/90 hover:bg-white text-brand-dark border-none text-2xl w-12 h-12 rounded-full flex items-center justify-center cursor-pointer z-10 transition shadow-lg">❮</button>
-                        <button id="carouselNext" class="absolute top-1/2 -translate-y-1/2 right-4 bg-white/90 hover:bg-white text-brand-dark border-none text-2xl w-12 h-12 rounded-full flex items-center justify-center cursor-pointer z-10 transition shadow-lg">❯</button>
-                        <div class="absolute bottom-6 w-full flex justify-center gap-3 z-10">
-                            <span class="dot inline-block h-3 w-8 bg-brand-dark rounded-full cursor-pointer transition" data-index="0"></span>
-                            <span class="dot inline-block h-3 w-8 bg-brand-purple/40 rounded-full cursor-pointer transition" data-index="1"></span>
-                            <span class="dot inline-block h-3 w-8 bg-brand-purple/40 rounded-full cursor-pointer transition" data-index="2"></span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -307,12 +313,13 @@
                         bem-estar das comunidades atendidas.
                     </p>
                 </div>
-                <!-- Lista de Relatórios -->
-                <div class="bg-white rounded-3xl shadow-lg border border-brand-purple/10 p-10">
-                    <h3 class="text-2xl font-extrabold text-brand-dark mb-6">Relatórios e Documentos</h3>
-                    <div id="relatorios-list" class="space-y-4">
-                        <p class="text-black text-base">Carregando relatórios...</p>
-                    </div>
+                <div class="text-center">
+                    <a href="transparencia/index.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-brand-dark text-white hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-brand-dark/30">
+                        Ver Todos os Relatórios
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -325,7 +332,7 @@
                     <h2 class="text-white font-extrabold text-2xl md:text-3xl mb-4">Vamos construir essa mudança juntos?</h2>
                 </div>
                 <a href="https://api.whatsapp.com/send?phone=5516992507957&text=Ol%C3%A1%20Projeto%20Mudando%20Vidas%2C%20gostaria%20de%20saber%20mais%20sobre%20como%20posso%20ajudar!" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-white text-brand-dark hover:bg-brand-blush transition-all duration-300">
-                    Entre em contato via WhatsApp
+                    WhatsApp
                 </a>
             </div>
         </section>

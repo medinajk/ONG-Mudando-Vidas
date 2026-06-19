@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <title>Nossa História | Projeto Mudando Vidas</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#837ba8',
+                            dark: '#6B4AAC',
+                            text: '#000000',
+                            accent: '#c46d7e',
+                            blush: '#fae8e8',
+                            bg: '#f8f5ff',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 120px; }
+        .gradient-blob {
+            background: radial-gradient(circle, rgba(107, 74, 172, 0.2) 0%, rgba(253, 246, 240, 0) 70%);
+        }
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: #6B4AAC;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 4px rgba(107, 74, 172, 0.2);
+        }
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(to bottom, #6B4AAC, #837ba8);
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text font-sans"> 
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-purple">
+        <nav class="max-w-7xl mx-auto flex items-center px-6 py-4">
+            <!-- Logo no canto esquerdo -->
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../img/logo.png" alt="Logo da ONG Mudando Vidas" class="w-14 h-14 rounded-full bg-white">
+            </a>
+
+            <!-- Botão mobile -->
+            <button id="menuButton" class="md:hidden ml-auto w-11 h-11 rounded-full bg-white/20 flex flex-col items-center justify-center">
+                <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+                <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+            </button>
+
+            <!-- Links de navegação centralizados -->
+            <div id="navLinks" class="hidden md:flex items-center gap-8 ml-auto mr-auto">
+                <a href="../index.html" class="text-white font-bold text-lg hover:opacity-80 transition">Home</a>
+                <a href="index.html" class="text-white font-bold text-lg hover:opacity-80 transition">Nossa História</a>
+                <a href="../index.html#initiatives" class="text-white font-bold text-lg hover:opacity-80 transition">Acolhimento Warao</a>
+                <a href="../index.html#donations" class="text-white font-bold text-lg hover:opacity-80 transition">Doações</a>
+                <a href="../index.html#partners" class="text-white font-bold text-lg hover:opacity-80 transition">Parceiros</a>
+                <a href="../transparencia/index.html" class="text-white font-bold text-lg hover:opacity-80 transition">Transparência</a>
+                <a href="../index.html#contact" class="text-white font-bold text-lg hover:opacity-80 transition">Contato</a>
+            </div>
+            
+            <!-- Espaço vazio para equilibrar o logo no lado esquerdo -->
+            <div class="hidden md:block w-14"></div>
+        </nav>
+        
+        <div id="mobileMenu" class="hidden md:hidden mx-6 mb-4 bg-brand-purple/95 rounded-2xl shadow-xl p-6">
+            <a href="../index.html" class="block text-white font-bold py-3 text-lg">Home</a>
+            <a href="index.html" class="block text-white font-bold py-3 text-lg">Nossa História</a>
+            <a href="../index.html#initiatives" class="block text-white font-bold py-3 text-lg">Acolhimento Warao</a>
+            <a href="../index.html#donations" class="block text-white font-bold py-3 text-lg">Doações</a>
+            <a href="../index.html#partners" class="block text-white font-bold py-3 text-lg">Parceiros</a>
+            <a href="../transparencia/index.html" class="block text-white font-bold py-3 text-lg">Transparência</a>
+            <a href="../index.html#contact" class="block text-white font-bold py-3 text-lg">Contato</a>
+        </div>
+    </header>
+
+    <main class="pt-32">
+        <section class="relative overflow-hidden max-w-7xl mx-auto px-6 py-16 md:py-20">
+            <div class="absolute top-0 left-0 w-96 h-96 gradient-blob -translate-x-1/2 -translate-y-1/2"></div>
+            
+            <div class="relative z-10 text-center">
+                <span class="inline-block bg-brand-purple/20 text-brand-dark font-bold text-xs md:text-sm tracking-wider uppercase px-6 py-2 rounded-full mb-6">
+                    Conheça nossa trajetória
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    <span class="text-brand-dark">Nossa História</span>
+                </h1>
+                <p class="text-lg md:text-xl text-black max-w-3xl mx-auto">
+                    Uma jornada de amor, solidariedade e transformação que começou em 2014 e continua mudando vidas todos os dias.
+                </p>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-12">
+            <div class="bg-white rounded-3xl shadow-lg border border-brand-purple/10 p-10 md:p-14 mb-12">
+                <h2 class="text-3xl font-extrabold text-brand-dark mb-6 font-serif">Projeto Mudando Vidas</h2>
+                
+                <p class="text-base md:text-lg text-black leading-relaxed mb-6">
+                    O Projeto Mudando Vidas, desenvolvido pela OSC de igual denominação, é um Serviço Socioassistencial de Acolhimento, na modalidade Abrigo Institucional, a pessoas do gênero feminino, com perfil/histórico de vivência em situação de rua, e eventualmente crianças e adolescentes de sua responsabilidade e que as acompanham.
+                </p>
+
+                <p class="text-base md:text-lg text-black leading-relaxed mb-6">
+                    A Organização, nascida em setembro de 2014, surgiu voltada a desenvolver ações e atuação junto a pessoas em processo de pré ou pós tratamento em Comunidades terapêuticas (voluntariamente) por uso/abuso de álcool e drogas, e apoio e suporte no período em que permaneciam em tratamento.
+                </p>
+
+                <p class="text-base md:text-lg text-black leading-relaxed mb-6">
+                    Além disto o Projeto militou e ainda milita com ativismo na área de prevenção e combate ao uso e abuso de álcool e drogas, e ao atendimento à população em situação de rua em geral.
+                </p>
+
+                <div class="flex flex-col md:flex-row items-center gap-8 my-10 p-6 bg-brand-bg rounded-2xl">
+                    <img src="../img/presidente.png" alt="Ricardo Tostes" class="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-brand-purple">
+                    <p class="text-xl font-bold text-brand-dark">Ricardo Tostes - Presidente do Projeto Mudando Vidas</p>
+                </div>
+
+                <p class="text-base md:text-lg text-black leading-relaxed mb-6">
+                    Sediado no Jardim Paiva, zona Oeste do Distrito Sede de Ribeirão Preto, a partir de 2021 firmou por ter sido classificado em Edital de Chamamento Público, parceria na gestão compartilhada, em regime de mutua e recíproca cooperação em interesse público, com a Secretaria Municipal de Assistência Social, da Prefeitura Municipal de Ribeirão Preto no Serviço Socioassistencial nacionalmente tipificado que atualmente desenvolve, especificamente com pessoas do gênero feminino, com histórico ou perfil de situação de rua.
+                </p>
+
+                <p class="text-base md:text-lg text-black leading-relaxed mb-6">
+                    A parceria firmada em 2021, foi prorrogada em 2022 e 2023, e ampliada de 12 vagas iniciais para 16 vagas atuais, após ampliação do espaço de acolhimento do Projeto.
+                </p>
+
+                <p class="text-base md:text-lg text-black leading-relaxed mb-6">
+                    O projeto tem obtido índices e indicadores positivos, acima da média, no encaminhamento de acolhidas ao retorno à vida comunitária de forma positiva, proativa e pró social, depois de um período de atendimento psicossocial na Unidade Casa Abrigo mantida, não voltando as mesmas a vivência de rua, nem ao consumo ou uso e abuso de substância psicoativas, retomando relações familiares, e/ou afetivas, e profissionais.
+                </p>
+
+                <p class="text-base md:text-lg text-black leading-relaxed mb-6">
+                    O Projeto trabalha em rede, com parceiros públicos e privados diversos, colaboradores ou ofertando serviços de inclusão em políticas públicas, notadamente: educação, saúde, educação para e pelo trabalho, espiritualidade respeitando o direito de crença de cada acolhida, arte e cultura, esporte, recreação e lazer, entre outras.
+                </p>
+
+                <p class="text-base md:text-lg text-black leading-relaxed mb-6">
+                    A Casa Abrigo, unidade de atendimento do projeto atualmente tem hoje uma equipe composta por: Coordenação, três técnicos em equipe intersetorial (assistente social, psicólogo e pedagoga), 04 educadores-cuidadores-sociais, 04 auxiliares de educadores-cuidadores-sociais, dois dos quais exercendo a função de cozinheiro.
+                </p>
+
+                <p class="text-base md:text-lg text-black leading-relaxed mb-6">
+                    O projeto pretende, tão logo possível ampliar suas vagas um pouco mais e ampliar sua atuação em outros serviços socioassistenciais, se obter classificação em participação em editais de chamamento.
+                </p>
+
+                <p class="text-base md:text-lg text-black leading-relaxed">
+                    Importante concluir, lembrando que a parceria com o Poder Público é voluntária e gratuita, não sendo a OSC remunerada em nenhum centavo e de nenhuma forma pela cessão de sua experiência/expertise, igual e semelhante. Repasse de recursos realizados são exclusivamente para fazer frente a despesas de custeio do projeto, deles se prestando contas regularmente e restituindo eventuais saldos remanescentes ao final da mesma.
+                </p>
+            </div>
+
+            <div class="mb-12">
+                <div class="text-center mb-12">
+                    <div class="w-24 h-2 bg-brand-dark mx-auto rounded-full mb-8"></div>
+                    <h2 class="text-3xl font-extrabold text-brand-dark font-serif">Nossa Linha do Tempo</h2>
+                </div>
+                
+                <div class="flex flex-col gap-8">
+                    <div class="flex gap-6">
+                        <div class="flex flex-col items-center">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line flex-grow"></div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg border border-brand-purple/10 p-6 flex-grow">
+                            <span class="inline-block bg-brand-purple/20 text-brand-dark font-bold px-4 py-1 rounded-full mb-3">Setembro de 2014</span>
+                            <h3 class="text-xl font-extrabold text-brand-dark mb-3">Fundação do Projeto</h3>
+                            <p class="text-black">Nascimento da Organização voltada a pessoas em pré ou pós tratamento em comunidades terapêuticas.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex flex-col items-center">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line flex-grow"></div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg border border-brand-purple/10 p-6 flex-grow">
+                            <span class="inline-block bg-brand-purple/20 text-brand-dark font-bold px-4 py-1 rounded-full mb-3">2021</span>
+                            <h3 class="text-xl font-extrabold text-brand-dark mb-3">Parceria com a Prefeitura</h3>
+                            <p class="text-black">Classificação em Edital de Chamamento Público e parceria com a Secretaria Municipal de Assistência Social de Ribeirão Preto.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex flex-col items-center">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line flex-grow"></div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg border border-brand-purple/10 p-6 flex-grow">
+                            <span class="inline-block bg-brand-purple/20 text-brand-dark font-bold px-4 py-1 rounded-full mb-3">2022-2023</span>
+                            <h3 class="text-xl font-extrabold text-brand-dark mb-3">Prorrogação e Ampliação</h3>
+                            <p class="text-black">Parceria prorrogada e vagas ampliadas de 12 para 16 após ampliação do espaço de acolhimento.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex flex-col items-center">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg border border-brand-purple/10 p-6 flex-grow">
+                            <span class="inline-block bg-brand-purple/20 text-brand-dark font-bold px-4 py-1 rounded-full mb-3">Hoje</span>
+                            <h3 class="text-xl font-extrabold text-brand-dark mb-3">Continuamos transformando vidas</h3>
+                            <p class="text-black">Equipe completa, indicadores positivos e sonhos de expandir ainda mais nossas ações.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+
+            <!-- Carrossel de Fotos -->
+            <div class="mb-12">
+                <div class="text-center mb-12">
+                    <div class="w-24 h-2 bg-brand-dark mx-auto rounded-full mb-8"></div>
+                    <h2 class="text-3xl font-extrabold text-brand-dark font-serif">Nossa Galeria</h2>
+                </div>
+                <div class="relative max-w-3xl mx-auto rounded-3xl shadow-xl overflow-hidden">
+                    <div id="historyCarouselSlides" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Adicione suas fotos aqui -->
+                        <img src="../img/img4.png" alt="Foto 1" class="w-full flex-shrink-0 object-cover">
+                        <img src="../img/img5.png" alt="Foto 2" class="w-full flex-shrink-0 object-cover">
+                        <img src="../img/img6.png" alt="Foto 3" class="w-full flex-shrink-0 object-cover">
+                    </div>
+                    <button id="historyCarouselPrev" class="absolute top-1/2 -translate-y-1/2 left-4 bg-white/90 hover:bg-white text-brand-dark border-none text-2xl w-12 h-12 rounded-full flex items-center justify-center cursor-pointer z-10 transition shadow-lg">❮</button>
+                    <button id="historyCarouselNext" class="absolute top-1/2 -translate-y-1/2 right-4 bg-white/90 hover:bg-white text-brand-dark border-none text-2xl w-12 h-12 rounded-full flex items-center justify-center cursor-pointer z-10 transition shadow-lg">❯</button>
+                    <div class="absolute bottom-6 w-full flex justify-center gap-3 z-10">
+                        <span class="history-carousel-dot inline-block h-3 w-8 bg-brand-dark rounded-full cursor-pointer transition" data-index="0"></span>
+                        <span class="history-carousel-dot inline-block h-3 w-8 bg-brand-purple/40 rounded-full cursor-pointer transition" data-index="1"></span>
+                        <span class="history-carousel-dot inline-block h-3 w-8 bg-brand-purple/40 rounded-full cursor-pointer transition" data-index="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-16 mb-10">
+            <div class="bg-brand-dark rounded-3xl p-10 md:p-14 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <p class="text-brand-blush font-extrabold text-xs tracking-widest uppercase mb-4">Faça Parte</p>
+                    <h2 class="text-white font-extrabold text-2xl md:text-3xl mb-4">Ajude-nos a continuar escrevendo essa história!</h2>
+                </div>
+                <a href="../index.html#donations" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-extrabold text-lg bg-white text-brand-dark hover:bg-brand-blush transition-all duration-300">
+                    Contribuir
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-dark py-10 px-6 text-center text-white/80">
+        <p class="text-lg">&copy; 2026 Projeto Mudando Vidas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="../script.js"></script>
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

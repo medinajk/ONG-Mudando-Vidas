@@ -105,10 +105,10 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
 
     console.log('URL pública do PDF:', pdfUrl);
 
-    // Salva na tabela do banco de dados (relatorios)
+    // Salva na tabela do banco de dados (transparencia)
     const { error: dbError } = await supabase
-        .from('relatorios')
-        .insert([{ titulo: titulo, arquivo_url: pdfUrl, tamanho: tamanhoEmMB }]);
+        .from('transparencia')
+        .insert([{ title: titulo, file: pdfUrl, size: tamanhoEmMB }]);
 
     console.log('Resultado da inserção no banco:', { dbError });
 
