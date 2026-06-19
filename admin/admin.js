@@ -13,6 +13,7 @@ async function verificarSessao() {
     if (session) {
         loginSection.classList.add('hidden');
         uploadSection.classList.remove('hidden');
+        carregarRelatoriosAdmin();
     }
 }
 verificarSessao();
@@ -47,6 +48,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         loginSection.classList.add('hidden');
         uploadSection.classList.remove('hidden');
         loginStatus.innerText = "";
+        carregarRelatoriosAdmin();
     }
 });
 
@@ -60,6 +62,61 @@ document.getElementById('btnLogout').addEventListener('click', async () => {
     document.getElementById('status').innerText = "";
     document.getElementById('btnLogin').disabled = false;
 });
+
+// Função para carregar relatórios na área admin
+async function carregarRelatoriosAdmin() {
+    const relatoriosListAdmin = document.getElementById('relatoriosListAdmin');
+    if (!relatoriosListAdmin) return;
+
+    const { data: relatorios, error } = await supabase
+        .from('transparencia')
+        .select('*')
+        .order('id', { ascending: false });
+
+    if (error) {
+        console.error('Erro ao carregar relatórios:', error);
+        relatoriosListAdmin.innerHTML = '<p class="text-red-500 text-base">Erro ao carregar relatórios: ' + error.message + '</p>';
+        return;
+    }
+
+    if (relatorios.length === 0) {
+        relatoriosListAdmin.innerHTML = '<p class="text-gray-500 text-base">Nenhum relatório publicado ainda.</p>';
+        return;
+    }
+
+    relatoriosListAdmin.innerHTML = relatorios.map(relatorio => `
+        <div class="flex justify-between items-center p-4 bg-brand-bg rounded-xl border border-brand-purple/20">
+            <div>
+                <h4 class="font-bold text-base text-black">${relatorio.title}</h4>
+                <p class="text-black text-xs">${relatorio.size}</p>
+            </div>
+            <div class="flex gap-2">
+                <a href="${relatorio.file}" target="_blank" class="bg-brand-purple text-white px-3 py-2 rounded-lg text-xs font-bold hover:bg-brand-dark transition">Visualizar</a>
+                <button onclick="excluirRelatorio(${relatorio.id})" class="bg-red-500 text-white px-3 py-2 rounded-lg text-xs font-bold hover:bg-red-600 transition">Excluir</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Função para excluir relatório
+window.excluirRelatorio = async function(id) {
+    if (!confirm('Tem certeza que deseja excluir este relatório?')) {
+        return;
+    }
+
+    const { error } = await supabase
+        .from('transparencia')
+        .delete()
+        .eq('id', id);
+
+    if (error) {
+        alert('Erro ao excluir relatório: ' + error.message);
+        console.error('Erro ao excluir:', error);
+    } else {
+        alert('Relatório excluído com sucesso!');
+        carregarRelatoriosAdmin();
+    }
+};
 
 // Upload
 document.getElementById('uploadForm').addEventListener('submit', async (e) => {
@@ -119,6 +176,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
         statusText.innerText = "✅ Relatório publicado com sucesso!";
         statusText.style.color = "#4ade80";
         document.getElementById('uploadForm').reset();
+        carregarRelatoriosAdmin();
     }
     
     btn.disabled = false;
