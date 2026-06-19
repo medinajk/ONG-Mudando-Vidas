@@ -7,6 +7,29 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 const loginSection = document.getElementById('loginSection');
 const uploadSection = document.getElementById('uploadSection');
 
+// Função para traduzir mensagens de erro do Supabase para português do Brasil
+function traduzirErro(error) {
+    if (!error) return "Ocorreu um erro inesperado.";
+    
+    const mensagensErro = {
+        'Invalid login credentials': 'E-mail ou senha incorretos. Por favor, verifique.',
+        'Email not confirmed': 'Este e-mail ainda não foi confirmado. Verifique sua caixa de entrada.',
+        'User not found': 'Usuário não encontrado.',
+        'Invalid email': 'E-mail inválido. Por favor, digite um e-mail válido.',
+        'Password should be at least 6 characters': 'A senha deve ter pelo menos 6 caracteres.',
+        'new row violates row-level security policy': 'Você não tem permissão para fazer esta ação.',
+        'Could not find the': 'Tabela ou coluna não encontrada no banco de dados.'
+    };
+    
+    for (const [padrao, mensagem] of Object.entries(mensagensErro)) {
+        if (error.message && error.message.includes(padrao)) {
+            return mensagem;
+        }
+    }
+    
+    return "Ocorreu um erro: " + error.message;
+}
+
 // Verificar se o usuário já tem sessão iniciada ao abrir a página
 async function verificarSessao() {
     const { data: { session } } = await supabase.auth.getSession();
@@ -41,7 +64,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
     if (error) {
         console.error('Erro de login:', error);
-        loginStatus.innerText = "Erro: " + error.message;
+        loginStatus.innerText = traduzirErro(error);
         loginStatus.style.color = "red";
         btnLogin.disabled = false;
     } else {
@@ -75,7 +98,7 @@ async function carregarRelatoriosAdmin() {
 
     if (error) {
         console.error('Erro ao carregar relatórios:', error);
-        relatoriosListAdmin.innerHTML = '<p class="text-red-500 text-base">Erro ao carregar relatórios: ' + error.message + '</p>';
+        relatoriosListAdmin.innerHTML = '<p class="text-red-500 text-base">' + traduzirErro(error) + '</p>';
         return;
     }
 
@@ -110,7 +133,7 @@ window.excluirRelatorio = async function(id) {
         .eq('id', id);
 
     if (error) {
-        alert('Erro ao excluir relatório: ' + error.message);
+        alert(traduzirErro(error));
         console.error('Erro ao excluir:', error);
     } else {
         alert('Relatório excluído com sucesso!');
@@ -146,7 +169,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
     console.log('Resultado do upload:', { uploadData, uploadError });
 
     if (uploadError) {
-        statusText.innerText = "Erro ao enviar arquivo: " + uploadError.message;
+        statusText.innerText = traduzirErro(uploadError);
         statusText.style.color = "red";
         btn.disabled = false;
         return;
@@ -170,7 +193,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
     console.log('Resultado da inserção no banco:', { dbError });
 
     if (dbError) {
-        statusText.innerText = "Erro ao guardar dados: " + dbError.message;
+        statusText.innerText = traduzirErro(dbError);
         statusText.style.color = "red";
     } else {
         statusText.innerText = "✅ Relatório publicado com sucesso!";

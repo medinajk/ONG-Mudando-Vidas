@@ -7,6 +7,24 @@ const supabaseUrl = 'https://wymmlejhukzjxzcazieu.supabase.co'
 const supabaseKey = 'sb_publishable_qRR3cPHhT53OR9RFGkJ2TA_RlOlQgsW'
 const supabase = createClient(supabaseUrl, supabaseKey)
 
+// Função para traduzir mensagens de erro do Supabase para português do Brasil
+function traduzirErro(error) {
+    if (!error) return "Ocorreu um erro inesperado.";
+    
+    const mensagensErro = {
+        'new row violates row-level security policy': 'Você não tem permissão para fazer esta ação.',
+        'Could not find the': 'Tabela ou coluna não encontrada no banco de dados.'
+    };
+    
+    for (const [padrao, mensagem] of Object.entries(mensagensErro)) {
+        if (error.message && error.message.includes(padrao)) {
+            return mensagem;
+        }
+    }
+    
+    return "Erro ao carregar relatórios: " + error.message;
+}
+
 // Carrega os relatórios na página principal
 async function carregarRelatorios() {
     const relatoriosList = document.getElementById('relatorios-list');
@@ -20,7 +38,7 @@ async function carregarRelatorios() {
 
     if (error) {
         console.error('Erro ao carregar relatórios:', error);
-        relatoriosList.innerHTML = '<p class="text-red-500 text-base">Erro ao carregar relatórios: ' + error.message + '</p>';
+        relatoriosList.innerHTML = '<p class="text-red-500 text-base">' + traduzirErro(error) + '</p>';
         return;
     }
 
